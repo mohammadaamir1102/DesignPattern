@@ -29,7 +29,8 @@ public class SingletonLazy {
             singletonInstance = new SingletonLazy();
         }
 
-        // synchronized block
+
+        /* synchronized block
         if (singletonInstance == null) {
             synchronized (SingletonLazy.class) {
                 if (singletonInstance == null) {
@@ -37,6 +38,7 @@ public class SingletonLazy {
                 }
             }
         }
+        */
         return singletonInstance;
     }
 }
