@@ -20,8 +20,22 @@ public class SingletonLazy {
     }
 
     public static SingletonLazy getInstance() {
+
+        /*
+         * This way create the problem while more than one thread is calling this method
+         * if considering the thread concept then need to use synchronized block
+         * */
         if (singletonInstance == null) {
             singletonInstance = new SingletonLazy();
+        }
+
+        // synchronized block
+        if (singletonInstance == null) {
+            synchronized (SingletonLazy.class) {
+                if (singletonInstance == null) {
+                    singletonInstance = new SingletonLazy();
+                }
+            }
         }
         return singletonInstance;
     }
