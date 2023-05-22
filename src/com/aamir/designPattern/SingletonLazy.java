@@ -17,6 +17,10 @@ public class SingletonLazy {
     private static SingletonLazy singletonInstance;
 
     private SingletonLazy() {
+        if(singletonInstance != null){
+            // if object already exist then throw the exception
+            throw new IllegalStateException("Already Instance created !");
+        }
     }
 
     public static SingletonLazy getInstance() {
@@ -25,12 +29,12 @@ public class SingletonLazy {
          * This way create the problem while more than one thread is calling this method
          * if considering the thread concept then need to use synchronized block
          * */
-        if (singletonInstance == null) {
-            singletonInstance = new SingletonLazy();
-        }
+//        if (singletonInstance == null) {
+//            singletonInstance = new SingletonLazy();
+//        }
 
 
-        /* synchronized block
+//         synchronized block
         if (singletonInstance == null) {
             synchronized (SingletonLazy.class) {
                 if (singletonInstance == null) {
@@ -38,7 +42,6 @@ public class SingletonLazy {
                 }
             }
         }
-        */
         return singletonInstance;
     }
 }
