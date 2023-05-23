@@ -1,0 +1,2 @@
+When there is a superclass and multiple subclasses and want to get the object of subclasses
+based on input or requirement then need the factory design pattern.
