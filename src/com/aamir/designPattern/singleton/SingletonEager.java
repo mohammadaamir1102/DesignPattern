@@ -1,4 +1,4 @@
-package com.aamir.designPattern;
+package com.aamir.designPattern.singleton;
 
 public class SingletonEager {
 
